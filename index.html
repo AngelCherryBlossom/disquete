@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>DISQUETE PROTEGIDO</title>
+  <style>
+    body {
+      background-color: #0b0b0b;
+      font-family: monospace;
+      color: #00ff00;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    #conteudo {
+      display: none;
+      text-align: center;
+    }
+    input[type="password"] {
+      background-color: black;
+      color: #00ff00;
+      border: 1px solid #00ff00;
+      font-family: monospace;
+      padding: 5px;
+      margin-top: 10px;
+    }
+    button {
+      background-color: black;
+      color: #00ff00;
+      border: 1px solid #00ff00;
+      font-family: monospace;
+      padding: 5px 10px;
+      cursor: pointer;
+      margin-left: 10px;
+    }
+    img {
+      max-width: 90vw;
+      border: 2px solid #00ff00;
+      margin-top: 20px;
+      height: 80px;
+
+    }
+  </style>
+</head>
+<body>
+  <div id="login">
+    <h2>DISQUETE PROTEGIDO POR SENHA</h2>
+    <p>Insira a senha de acesso para destravar:</p>
+    <input type="password" id="senha" placeholder="********">
+    <button onclick="verificarSenha()">ACESSAR</button>
+  </div>
+
+  <div id="conteudo">
+    <p>✔ ACESSO CONCEDIDO. ARQUIVO MONTADO EM 1993.</p>
+    <img src="/pdficon.png" alt="PDF capturado nos anos 90"><br>
+    <p><a href="https://drive.google.com/file/d/18_RxkePnOtJ90NHx2WhgO7sG5JEJ1cb7/view?usp=sharing" target="_blank">ABRIR DOCUMENTO</a></p>
+  </div>
+
+  <script>
+    function verificarSenha() {
+      const senha = document.getElementById("senha").value;
+      if (senha.toLowerCase() === "koykla") {
+        document.getElementById("login").style.display = "none";
+        document.getElementById("conteudo").style.display = "block";
+      } else {
+        alert("SENHA INCORRETA.");
+      }
+    }
+  </script>
+</body>
+</html>
